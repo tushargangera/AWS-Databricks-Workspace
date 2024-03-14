@@ -1,0 +1,96 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "GrantCatalogAccessToGlue",
+          "Effect": "Allow",
+          "Action": [
+              "glue:BatchCreatePartition",
+              "glue:BatchDeletePartition",
+              "glue:BatchGetPartition",
+              "glue:CreateDatabase",
+              "glue:CreateTable",
+              "glue:CreateUserDefinedFunction",
+              "glue:DeleteDatabase",
+              "glue:DeletePartition",
+              "glue:DeleteTable",
+              "glue:DeleteUserDefinedFunction",
+              "glue:GetDatabase",
+              "glue:GetDatabases",
+              "glue:GetPartition",
+              "glue:GetPartitions",
+              "glue:GetTable",
+              "glue:GetTables",
+              "glue:GetUserDefinedFunction",
+              "glue:GetUserDefinedFunctions",
+              "glue:UpdateDatabase",
+              "glue:UpdatePartition",
+              "glue:UpdateTable",
+              "glue:UpdateUserDefinedFunction",
+              "sqs:DeleteMessage",
+              "sns:TagResource",
+              "sqs:GetQueueUrl",
+              "sqs:ChangeMessageVisibility",
+              "sns:ListSubscriptionsByTopic",
+              "sns:GetTopicAttributes",
+              "sqs:ReceiveMessage",
+              "sqs:SendMessage",
+              "sns:CreateTopic",
+              "sqs:GetQueueAttributes",
+              "sns:SetTopicAttributes",
+              "s3:GetBucketNotification",
+              "sqs:TagQueue",
+              "s3:PutBucketNotification",
+              "sns:Publish",
+              "sns:Subscribe",
+              "sqs:CreateQueue",
+              "sqs:SetQueueAttributes",
+              "logs:PutMetricFilter",
+              "sqs:ListQueues",
+              "logs:CreateLogStream",
+              "sns:ListTopics",
+              "sqs:ListQueueTags",
+              "logs:PutRetentionPolicy",
+              "logs:CreateLogGroup",
+              "logs:PutLogEvents",
+              "sns:DeleteTopic",
+              "sqs:DeleteQueue",
+              "sns:Unsubscribe"
+          ],
+          "Resource": [
+              "arn:aws:sns:us-east-2:576259462660:databricks-auto-ingest-*",
+              "arn:aws:sqs:us-east-2:576259462660:databricks-auto-ingest-*",
+              "*"
+          ]
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "s3:ListBucket"
+          ],
+          "Resource": [
+              "arn:aws:s3:::source-dataset-tenant-2",
+              "arn:aws:s3:::bronze-lake-tenant-2",
+              "arn:aws:s3:::data-quality-tenant-2",
+              "arn:aws:s3:::silver-lake-tenant-2",
+              "arn:aws:s3:::gold-lake-tenant-2"
+          ]
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "s3:PutObject",
+              "s3:GetObject",
+              "s3:DeleteObject",
+              "s3:PutObjectAcl"
+          ],
+          "Resource": [
+            "arn:aws:s3:::source-dataset-tenant-2/*",
+            "arn:aws:s3:::bronze-lake-tenant-2/*",
+            "arn:aws:s3:::data-quality-tenant-2/*",
+            "arn:aws:s3:::silver-lake-tenant-2/*",
+            "arn:aws:s3:::gold-lake-tenant-2/*"
+          ]
+      }
+  ]
+}
