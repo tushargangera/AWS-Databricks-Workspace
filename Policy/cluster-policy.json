@@ -1,0 +1,42 @@
+{
+  "num_workers": {
+    "type": "fixed",
+    "value": 0,
+    "hidden": true
+  },
+  "spark_version": {
+    "type": "fixed",
+    "value": "9.1.x-scala2.12",
+    "hidden": true
+  },
+  "aws_attributes.instance_profile_arn": {
+    "type": "fixed",
+    "value": "arn:aws:iam::576259462660:instance-profile/databricksuser",
+    "hidden": true
+  },
+  "node_type_id": {
+    "type": "fixed",
+    "value": "m5d.large",
+    "hidden": true
+  },
+  "spark_conf.spark.databricks.hive.metastore.glueCatalog.enabled": {
+    "type": "fixed",
+    "value": "true",
+    "hidden": true
+  },
+  "spark_conf.spark.master": {
+    "type": "fixed",
+    "value": "local[*]",
+    "hidden": true
+  },
+  "aws_attributes.zone_id": {
+    "type": "fixed",
+    "value": "us-east-2b",
+    "hidden": true
+  },
+  "aws_attributes.first_on_demand": {
+    "type": "fixed",
+    "value": 1,
+    "hidden": true
+  }
+}
